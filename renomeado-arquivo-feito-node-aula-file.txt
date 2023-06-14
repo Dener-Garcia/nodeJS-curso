@@ -1,0 +1,1 @@
+Este arquivo foi feito com o nodeJS, Esse texto foi inserido com o appendFile
