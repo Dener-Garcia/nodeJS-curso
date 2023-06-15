@@ -109,9 +109,32 @@ Estao relacionados as resposta de uma acao feita ao servidor, sao codigos numeri
 
 > Familia 500 = quado o erro ocorre no servidor
 
-# Montando um servidor HTTP com node JS puro
+### Montando um servidor HTTP com node JS puro
 
 Um servidor web me permite acessar meu script atraves da web chamando uma URL e tendo respostas desse script que esta rodando em uma maquina
 
 > Veja arquivo server.js
+
+        const http = require("http")
+
+- const http = require("http") = funcao para criar um servidor
+
+        const servidor = http.createServer((req, res) => {
+        console.log(req.method)
+        console.log(req.url)
+        res.statusCode = 200
+    
+- criando um H1 com res.end
+
+        res.end("(h1)Resposta servidor com res.end(/h1)")
+        })
+
+- Dizendo para servidor em qual porta ele deve escutar, monitorar, rodas etc..
+
+        servidor.listen(3001, () => {
+        console.log("servidor rodando")
+        })
+
+No terminal ele vai retornar esse console.log acima, porem no navegador voce vai reparar que ele vai ficar rodando como se estivesse carregando infinitamente, isso se deve que so inicializar o servidor nao pasta eh necessario dar alguma resposta para o browser
+
 
